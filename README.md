@@ -13,3 +13,4 @@ $ npm install
 $ bower install
 $ grunt watch
 ```
+Then you just serve build/index.html using your favorite local server (like npm serve)
