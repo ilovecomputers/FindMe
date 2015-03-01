@@ -1,6 +1,5 @@
 angular.module( 'FindMe.Color', [
-  'ui.router',
-  'FindMe.Utility'
+  'ui.router'
 ])
 
 .config(function config( $stateProvider ) {
@@ -31,6 +30,18 @@ angular.module( 'FindMe.Color', [
 })
 .controller( 'ColorCtrl', function ColorController( $scope, $stateParams ) {
     $scope.color = $stateParams.color;
+})
+
+/**
+ * This directive helps our list of colors expand to the height of the viewport.
+ * This directive will set the height of an element to: viewport height / number set to equal-height attribute.
+ */
+.directive('equalHeight', function equalHeightDirective(){
+  return function (scope, elem, attr) {
+    attr.$observe('equalHeight', function(numberOfChildren){
+      elem[0].style.height = (document.documentElement.clientHeight / numberOfChildren) + 'px';
+    });
+  };
 })
 
 ;
