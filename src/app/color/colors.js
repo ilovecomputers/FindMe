@@ -1,5 +1,6 @@
 angular.module( 'FindMe.Color', [
-  'ui.router'
+  'ui.router',
+  'FindMe.Utility'
 ])
 
 .config(function config( $stateProvider ) {
